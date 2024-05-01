@@ -11,10 +11,20 @@ datasource db {
 }
 
 model Person {
-  id            Int         @id @default(autoincrement())
-  firstName     String
-  lastName      String
-  email         String      @unique
-  birthdate     DateTime?
-  role          String // "STUDENT" or "TEACHER"
+  idPerson  Int       @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String    @unique
+  birthdate DateTime?
+  role      String // "STUDENT" or "TEACHER"
+  coursesTaught Course[] @relation("TeacherCourses")
+}
+
+model Course {
+  idCourse  Int @id @default(autoincrement())
+  name      String
+  code      String @unique //Abbreviaton
+  description String?
+  courseTeacher Person  @relation("TeacherCourses", fields: [teacherId], references: [idPerson])
+  teacherId Int
 }
