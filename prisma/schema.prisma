@@ -48,4 +48,14 @@ model Enrollment {
   course        Course    @relation(fields: [courseId], references: [idCourse])
   courseId      Int
   enrolledAt    DateTime  @default(now())
+  grades        Grade[]   @relation("EnrollmentGrades")
+}
+
+model Grade {
+  idGrade     Int   @id @default(autoincrement())
+  name        String
+  enrollment  Enrollment @relation("EnrollmentGrades", fields: [enrollmentId], references: [idEnrollment])
+  enrollmentId Int
+  grade        Float
+  gradedAt     DateTime @default(now())
 }
