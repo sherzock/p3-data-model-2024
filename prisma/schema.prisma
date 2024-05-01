@@ -27,4 +27,14 @@ model Course {
   description String?
   courseTeacher Person  @relation("TeacherCourses", fields: [teacherId], references: [idPerson])
   teacherId Int
+  classroom Classroom @relation(fields: [classromId], references: [idClassroom])
+  classromId  Int
+}
+
+model Classroom {
+  idClassroom      Int @id @default(autoincrement())
+  name             String
+  capacity         Int?
+  location         String?
+  courses          Course[]
 }
