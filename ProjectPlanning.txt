@@ -76,4 +76,4 @@ cursos, aulas, etc.
 3. Crear una seed para tener datos de muestra
 4. Crear scripts basicos que parseen los datos de las db en TS.
 5. Crear los scripts para hacer las operaciones CRUD necesarias con cada Tabla.
-
+6. modificar el readme con las instrucciones pertinentes.

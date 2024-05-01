@@ -6,8 +6,14 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgres"
+  url      = "postgresql://sherzock:1357@localhost:8181/db?schema=public"
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
 }
 
 model Person {
@@ -16,7 +22,7 @@ model Person {
   lastName  String
   email     String    @unique
   birthdate DateTime?
-  role      String // "STUDENT" or "TEACHER"
+  role      Role
   coursesTaught Course[] @relation("TeacherCourses")
   enrollments   Enrollment[] @relation("StudentEnrollments")
 }
