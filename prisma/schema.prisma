@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgres"
-  url      = "postgresql://sherzock:1357@localhost:8181/db?schema=public"
+  url      = "postgresql://admin:admin123@localhost:5432/CourseManagement?schema=public"
 }
 
 enum Role {
