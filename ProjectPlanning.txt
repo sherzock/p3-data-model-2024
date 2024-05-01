@@ -1,0 +1,79 @@
+--------------------- Idea del Proyecto ---------------------
+
+Sistema de gestion de un colegio o universidad. El objetivo es montar un sistema
+donde podamos encontrar toda la informacion necesaria para desarrollar los cursos
+en una universidad o colegio. Para ello tendremos en cuenta Alumnos, profesores, 
+cursos, aulas, etc.
+
+
+-------------------- Que tablas necesitamos ---------------------
+
+- Personas (para estudiantes y Profesores)
+    - Datos necesarios:
+        - Id
+        - Nombre
+        - Apellidos
+        - email
+        - fecha de nacimiento ?
+        - variable que identifique si es profesor o alumno
+        - curso/s que llevan o estan inscritos
+
+- Cursos
+    - Datos necesarios:
+        - Id
+        - Nombre
+        - Codigo (abreviacion del curso)
+        - Descripcion ?
+        - Profesor
+        - Id del profesor
+        - Alumnos inscritos
+        - Clase
+        - Id de la clase
+
+- Clases
+    - Datos necesarios:
+        - Id
+        - Nombre
+        - Capacidad ?
+        - Direccion
+        - Cursos
+
+
+-------------------- Tablas que se pueden añadir ---------------------
+
+- Inscripciones
+    - Datos necesarios:
+        - Id
+        - Estudiante
+        - Id del estudiante
+        - Curso
+        - Id del curso
+        - Fecha de la inscripción 
+
+- Notas
+    - Datos necesarios:
+        - id
+        - inscripcion
+        - id inscripcion
+        - Nota
+        - Fecha de la nota
+
+
+-------------------  Scripts para manejar la db ---------------------
+
+- Crear / Eliminar/ Cambiar / Encontrar Personas-Aulas-Cursos
+
+---------------------------------------------------------------------
+- Hacer una inscripcion a un estudiante
+- Cambiar la inscripcion
+- Añadir / Cambiar notas
+
+
+-------------------------- Objetivos ------------------------------
+
+1. Crear un schema con las tablas basicas y sus Datos
+2. Configurar docker compose
+3. Crear una seed para tener datos de muestra
+4. Crear scripts basicos que parseen los datos de las db en TS.
+5. Crear los scripts para hacer las operaciones CRUD necesarias con cada Tabla.
+
