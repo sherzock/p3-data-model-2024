@@ -18,6 +18,7 @@ model Person {
   birthdate DateTime?
   role      String // "STUDENT" or "TEACHER"
   coursesTaught Course[] @relation("TeacherCourses")
+  enrollments   Enrollment[] @relation("StudentEnrollments")
 }
 
 model Course {
@@ -29,12 +30,22 @@ model Course {
   teacherId Int
   classroom Classroom @relation(fields: [classromId], references: [idClassroom])
   classromId  Int
+  enrollments Enrollment[]
 }
 
 model Classroom {
   idClassroom      Int @id @default(autoincrement())
   name             String
-  capacity         Int?
-  location         String?
+  capacity         Int? //Capacity is optional because it can be a virtual classroom
+  location         String? //Location is optional because it can be a virtual classroom
   courses          Course[]
+}
+
+model Enrollment {
+  idEnrollment  Int @id @default(autoincrement())
+  student       Person    @relation("StudentEnrollments", fields: [studentId], references: [idPerson])
+  studentId     Int
+  course        Course    @relation(fields: [courseId], references: [idCourse])
+  courseId      Int
+  enrolledAt    DateTime  @default(now())
 }
