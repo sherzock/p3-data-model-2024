@@ -38,6 +38,7 @@ model Classroom {
   name             String
   capacity         Int? //Capacity is optional because it can be a virtual classroom
   location         String? //Location is optional because it can be a virtual classroom
+  url              String? // For online classrooms
   courses          Course[]
 }
 

@@ -245,6 +245,97 @@ console.log(
   Teacher5
 );
 
+const Classroom1 = await db.classroom.create({
+  data: {
+    name: "A1",
+    capacity: 20,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom2 = await db.classroom.create({
+  data: {
+    name: "A2",
+    capacity: 35,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom3 = await db.classroom.create({
+  data: {
+    name: "A3",
+    capacity: 55,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom4 = await db.classroom.create({
+  data: {
+    name: "B1",
+    capacity: 12,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom5 = await db.classroom.create({
+  data: {
+    name: "B2",
+    capacity: 30,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom6 = await db.classroom.create({
+  data: {
+    name: "B3",
+    capacity: 44,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+const Classroom7 = await db.classroom.create({
+  data: {
+    name: "Online1",
+    url: "meet.google.com/test1",
+  },
+});
+
+const Classroom8 = await db.classroom.create({
+  data: {
+    name: "Online2",
+    url: "meet.google.com/test2",
+  },
+});
+
+const Classroom9 = await db.classroom.create({
+  data: {
+    name: "Online2",
+    url: "meet.google.com/test3",
+  },
+});
+
+const Classroom10 = await db.classroom.create({
+  data: {
+    name: "Auditorium",
+    capacity: 300,
+    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
+  },
+});
+
+console.log(
+  "Classrooms created:",
+  Classroom1,
+  Classroom2,
+  Classroom3,
+  Classroom4,
+  Classroom5,
+  Classroom6,
+  Classroom7,
+  Classroom8,
+  Classroom9,
+  Classroom10
+);
+
 
 
 await main();
