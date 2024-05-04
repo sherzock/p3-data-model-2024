@@ -255,66 +255,20 @@ const Classroom1 = await db.classroom.create({
 
 const Classroom2 = await db.classroom.create({
   data: {
-    name: "A2",
-    capacity: 35,
+    name: "B1",
+    capacity: 44,
     location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
   },
 });
 
 const Classroom3 = await db.classroom.create({
   data: {
-    name: "A3",
-    capacity: 55,
-    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
-  },
-});
-
-const Classroom4 = await db.classroom.create({
-  data: {
-    name: "B1",
-    capacity: 12,
-    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
-  },
-});
-
-const Classroom5 = await db.classroom.create({
-  data: {
-    name: "B2",
-    capacity: 30,
-    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
-  },
-});
-
-const Classroom6 = await db.classroom.create({
-  data: {
-    name: "B3",
-    capacity: 44,
-    location: "C/ de Badajoz, 73, Sant Martí, 08005 Barcelona",
-  },
-});
-
-const Classroom7 = await db.classroom.create({
-  data: {
-    name: "Online1",
+    name: "Online",
     url: "meet.google.com/test1",
   },
 });
 
-const Classroom8 = await db.classroom.create({
-  data: {
-    name: "Online2",
-    url: "meet.google.com/test2",
-  },
-});
-
-const Classroom9 = await db.classroom.create({
-  data: {
-    name: "Online2",
-    url: "meet.google.com/test3",
-  },
-});
-
-const Classroom10 = await db.classroom.create({
+const Classroom4 = await db.classroom.create({
   data: {
     name: "Auditorium",
     capacity: 300,
@@ -328,14 +282,98 @@ console.log(
   Classroom2,
   Classroom3,
   Classroom4,
-  Classroom5,
-  Classroom6,
-  Classroom7,
-  Classroom8,
-  Classroom9,
-  Classroom10
 );
 
+const Course1 = await db.course.create({
+  data:{
+    name: "FrontEnd Development",
+    code: "FD",
+    description: "Learning the Development of a FrontEnd application.",
+    teacherId: 1,
+    classromId: 1,
+  }
+});
+
+const Course2 = await db.course.create({
+  data:{
+    name: "BackEnd Development",
+    code: "BD",
+    description: "Learning the Development of a BackEnd application.",
+    teacherId: 2,
+    classromId: 2,
+  }
+});
+
+const Course3 = await db.course.create({
+  data:{
+    name: "Video games Development",
+    code: "VD",
+    description: "Learning the Development of Video games.",
+    teacherId: 3,
+    classromId: 3,
+  }
+});
+
+const Course4 = await db.course.create({
+  data:{
+    name: "Cybersecurity",
+    code: "CB",
+    description: "Learning about the prevention and methods you can use to stay safe using a computer.",
+    teacherId: 4,
+    classromId: 4,
+  }
+});
+
+const Course5 = await db.course.create({
+  data:{
+    name: "Data Science",
+    code: "DS",
+    description: "Learning about Data Science and how to implement it in other fields of computer science",
+    teacherId: 1,
+    classromId: 1,
+  }
+});
+
+const Course6 = await db.course.create({
+  data:{
+    name: "AI Development",
+    code: "AI",
+    description: "Learning tabout the different techniques used nowadays to develop AI.",
+    teacherId: 1,
+    classromId: 1,
+  }
+});
+
+const Course7 = await db.course.create({
+  data:{
+    name: "BlockChain Technologies",
+    code: "BT",
+    description: "Learning about Blockchain technologies and its uses.",
+    teacherId: 3,
+    classromId: 3,
+  }
+});
+
+const Course8 = await db.course.create({
+  data:{
+    name: "Big Data",
+    code: "DB",
+    description: "Learning  about Big Data techn ologies and its applications.",
+    teacherId: 2,
+    classromId: 2,
+  }
+});
+
+
+const Course9 = await db.course.create({
+  data:{
+    name: "Marketing",
+    code: "MK",
+    description: "Learning on how to create a proper Marketing project and campaign for a product or brand.",
+    teacherId: 2,
+    classromId: 2,
+  }
+});
 
 
 await main();
