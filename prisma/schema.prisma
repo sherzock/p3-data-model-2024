@@ -10,15 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Person {
+model Student {
   idPerson  Int       @id @default(autoincrement())
   firstName String
   lastName  String
   email     String    @unique
   birthdate DateTime?
-  role      String // "STUDENT" or "TEACHER"
-  coursesTaught Course[] @relation("TeacherCourses")
   enrollments   Enrollment[] @relation("StudentEnrollments")
+}
+
+model Teacher {
+  idPerson  Int       @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String    @unique
+  birthdate DateTime?
+  coursesTaught Course[] @relation("TeacherCourses")
 }
 
 model Course {
@@ -26,7 +33,7 @@ model Course {
   name      String
   code      String @unique //Abbreviaton
   description String?
-  courseTeacher Person  @relation("TeacherCourses", fields: [teacherId], references: [idPerson])
+  courseTeacher Teacher  @relation("TeacherCourses", fields: [teacherId], references: [idPerson])
   teacherId Int
   classroom Classroom @relation(fields: [classromId], references: [idClassroom])
   classromId  Int
@@ -44,7 +51,7 @@ model Classroom {
 
 model Enrollment {
   idEnrollment  Int @id @default(autoincrement())
-  student       Person    @relation("StudentEnrollments", fields: [studentId], references: [idPerson])
+  student       Student    @relation("StudentEnrollments", fields: [studentId], references: [idPerson])
   studentId     Int
   course        Course    @relation(fields: [courseId], references: [idCourse])
   courseId      Int
