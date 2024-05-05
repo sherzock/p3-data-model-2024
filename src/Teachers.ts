@@ -94,3 +94,20 @@ export const ListTeachers = async() => {
         return "Error: Could not find teachers";
     }
 }
+
+export const AssignCourse = async(teacherId: number, courseId: number) => {
+    try{
+        const course = await db.course.update({
+            where:{
+                idCourse: courseId,
+            },
+            data:{
+                teacherId,
+            }
+        });
+        return course;
+    }
+    catch(e){
+        return "Error: Could not assign course to teacher";
+    }
+}
