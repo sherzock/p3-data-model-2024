@@ -8,12 +8,12 @@ Se trata de un modelo de datos que emula un sistema de una universidad o escuela
 - Inscripciones
 - Notas
 
-- Los estudiantes pueden pueden tener inscripciones de varios cursos.
-- Por otro lado, los profesores pueden llevar varios cursos.
-- Se les puede añadir notas a los alumnos, cada nota se vera reflejada en su inscripción correspondiente.
-- Los Cursos a parte de profesor, pueden tener aula asignada y deben tener un codigo unico para identificarlos.
-- Tambien se puede añadir una descripción de los cursos.
-- Las aulas pueden tener ubicación, capacidad y para las aulas online, una url.
+Los estudiantes pueden pueden tener inscripciones de varios cursos.
+Por otro lado, los profesores pueden llevar varios cursos.
+Se les puede añadir notas a los alumnos, cada nota se vera reflejada en su inscripción correspondiente.
+Los Cursos a parte de profesor, pueden tener aula asignada y deben tener un codigo unico para identificarlos.
+Tambien se puede añadir una descripción de los cursos.
+Las aulas pueden tener ubicación, capacidad y para las aulas online, una url.
 
 ## Representación Grafica del modelo de datos
 
