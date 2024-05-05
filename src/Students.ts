@@ -65,3 +65,25 @@ export const DeleteStudent = async( studentid: number) => {
     }
 
 };
+
+export const FindStudent = async(studentId: number) => {
+    try{
+        const student = await db.student.findFirst({
+            where:{ idPerson: studentId},
+        });
+        return student;
+    }
+    catch(e){
+        return "Error: Could not find student";
+    }
+}
+
+export const ListStudents = async() => {
+    try{
+        const students = await db.student.findMany();
+        return students;
+    }
+    catch(e){
+        return "Error: Could not find students";
+    }
+}
