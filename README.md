@@ -81,7 +81,7 @@ Para los estudiantes tenemos 6 scripts que podemos usar:
 
 ### Profesores
 
-Para los profesores tenemos 6 scripts que podemos usar: 
+Para los profesores tenemos 7 scripts que podemos usar: 
 
 - Crear profesor
 
@@ -116,6 +116,12 @@ Para los profesores tenemos 6 scripts que podemos usar:
     bun scripts/Teachers/UpdateTeacher.ts "id del profesor" "nombre" "apellidos" "email"
 
     El email debe ser único, no puede estar repetido en la base de datos
+
+- Asignar Curso
+
+    bun scripts/Teachers/AssignCourse.ts "id del profesor" "id del curso"
+
+    Asigna un profesor a un curso
 
 ### Cursos
 
