@@ -8,14 +8,14 @@ Se trata de un modelo de datos que emula un sistema de una universidad o escuela
 - Inscripciones
 - Notas
 
-Los estudiantes pueden pueden tener inscripciones de varios cursos.
+Los estudiantes pueden tener inscripciones de varios cursos.
 Por otro lado, los profesores pueden llevar varios cursos.
 Se les puede añadir notas a los alumnos, cada nota se vera reflejada en su inscripción correspondiente.
-Los Cursos a parte de profesor, pueden tener aula asignada y deben tener un codigo unico para identificarlos.
-Tambien se puede añadir una descripción de los cursos.
+Los Cursos, aparte de profesor, pueden tener aula asignada y deben tener un código único para identificarlos.
+También se puede añadir una descripción de los cursos.
 Las aulas pueden tener ubicación, capacidad y para las aulas online, una url.
 
-## Representación Grafica del modelo de datos
+## Representación gràfica del modelo de datos
 
 ![image](imgs/prismaliser.png)
 
@@ -29,7 +29,7 @@ A continuación tendremos que hacer un push del modelo creado a la nueva base de
 
 bunx prisma db push
 
-Despues debemos generar los datos para poder probar el modelo que hemos creado:
+Después debemos generar los datos para poder probar el modelo que hemos creado:
 
 bunx prisma db seed
 
@@ -49,13 +49,13 @@ Para los estudiantes tenemos 6 scripts que podemos usar:
 
     bun scripts/StudentsCreateStudent.ts "Nombre" "Apellidos" "email"
 
-    El email debe ser unico y no usado antes en la base de datos
+    El email debe ser único y no usado antes en la base de datos
 
 - Eliminar estudiante
 
     bun scripts/Students/DeleteStudent.ts "id del estudiante"
 
-    Solo se podra eliminar si no tiene ninguna inscripción
+    Solo se podrá eliminar si no tiene ninguna inscripción
 
 - Inscribir estudiante
 
@@ -77,7 +77,7 @@ Para los estudiantes tenemos 6 scripts que podemos usar:
 
     bun scripts/Students/UpdateStudent.ts "id del estudiante" "nombre" "apellidos" "email"
 
-    El email debe ser unico, no puede estar repetido en la base de datos
+    El email debe ser único, no puede estar repetido en la base de datos
 
 ### Profesores
 
@@ -87,13 +87,13 @@ Para los profesores tenemos 6 scripts que podemos usar:
 
     bun scripts/Teachers/CreateTeacher.ts "Nombre" "Apellidos" "email"
 
-    El email debe ser unico y no usado antes en la base de datos
+    El email debe ser único y no usado antes en la base de datos
 
 - Eliminar profesor
 
     bun scripts/Teachers/DeleteTeacher.ts "id del profesor"
 
-    Solo se podra eliminar si no tiene ningun curso asignado
+    Solo se podrá eliminar si no tiene ningún curso asignado
 
 - Asignar nota a estudiante
 
@@ -115,7 +115,7 @@ Para los profesores tenemos 6 scripts que podemos usar:
 
     bun scripts/Teachers/UpdateTeacher.ts "id del profesor" "nombre" "apellidos" "email"
 
-    El email debe ser unico, no puede estar repetido en la base de datos
+    El email debe ser único, no puede estar repetido en la base de datos
 
 ### Cursos
 
@@ -123,9 +123,9 @@ Para los cursos tenemos 5 scripts:
 
 - Crear Curso
 
-    bun scripts/Courses/CreateCourse.ts "nombre" "codigo" "descripcion" "id del profesor" "id del aula"
+    bun scripts/Courses/CreateCourse.ts "nombre" "código" "descripción" "id del profesor" "id del aula"
 
-    el codigo ha de ser unico, no puede haber dos cursos con el mismo codigo
+    el código ha de ser único, no puede haber dos cursos con el mismo código
 
 - Eliminar Curso
 
@@ -143,17 +143,17 @@ Para los cursos tenemos 5 scripts:
 
     bun scripts/Courses/ListCourses.ts
 
-    Devuelove una lista con los datos de los cursos
+    Devuelve una lista con los datos de los cursos
 
 - Modificar Curso
 
-    bun scripts/Courses/UpdateCourse.ts "id del curso" "nombre" "codigo" "descripción" "id del profesor" "id del aula"
+    bun scripts/Courses/UpdateCourse.ts "id del curso" "nombre" "código" "descripción" "id del profesor" "id del aula"
 
-    El codigo ha de ser unico, no se puede repetir
+    El código ha de ser único, no se puede repetir
 
 ### Aulas
 
-Para el aula tenemos 5 scrip'ts diferentes:
+Para el aula tenemos 5 scripts diferentes:
 
 - Crear Aula
     
@@ -163,7 +163,7 @@ Para el aula tenemos 5 scrip'ts diferentes:
 
     bun scripts/Classrooms/DeleteClassroom.ts "id del aula"
 
-    Solo se podra eliminar si no tiene ningun curso asociado
+    Solo se podrá eliminar si no tiene ningún curso asociado
 
 - Encontrar Aula
 
