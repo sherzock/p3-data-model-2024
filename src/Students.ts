@@ -46,6 +46,6 @@ export const UpdateStudentInfo = async(studentId: number, firstName: string, las
         return student;
     }
     catch(e){
-        return "Error: Could not enrroll student";
+        return "Error: Could not update student info";
     }
 }
