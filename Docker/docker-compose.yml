@@ -6,9 +6,9 @@ services:
     image: postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: CourseManagement
+      POSTGRES_USER: fullstack
+      POSTGRES_PASSWORD: fullstack123
+      POSTGRES_DB: ${POSTGRES_DB:-playground}
       PGDATA: /data/postgres
     volumes:
       - postgres_vol:/data/postgres
@@ -22,8 +22,8 @@ services:
     image: dpage/pgadmin4
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@admin.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin123}
+      PGADMIN_DEFAULT_EMAIL: fullstack@upc.edu
+      PGADMIN_DEFAULT_PASSWORD: fullstack123
     volumes:
       - pgadmin_vol:/root/.pgadmin
     ports:

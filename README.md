@@ -21,7 +21,11 @@ Las aulas pueden tener ubicación, capacidad y para las aulas online, una url.
 
 ## inicializar el modelo de datos para su uso
 
-Al descargar el proyecto, lo primero que debemos hacer es generar la base de datos:
+Al descargar el proyecto, lo primero que debemos hacer es generar el container de docker. Desde la carpeta /Docker debemos hacer:
+
+docker compose up -d
+
+Una vez generado el container, tenemos que generar la base de datos con:
 
 bunx prisma generate
 
@@ -36,6 +40,18 @@ bunx prisma db seed
 Podemos ver el contenido usando:
 
 bunx prisma studio
+
+Tambien podemos usar pgadmin:
+
+usuario postgres: fullstack
+contraseña postgres: fullstack123
+
+usuario pgadmin: fullstack@upc.edu
+contraseña: fullstack123
+
+el puerto para entrar es el 5050 por defecto:
+
+localhost:5050
 
 Ahora ya estamos preparados para usar los diferentes scripts y funcionalidades.
 

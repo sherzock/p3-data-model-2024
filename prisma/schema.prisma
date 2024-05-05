@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgres"
+  url      = "postgresql://fullstack:fullstack123@localhost:5432/playground"//env("DATABASE_URL")
 }
 
 model Student {
