@@ -17,6 +17,8 @@ Se trata de un modelo de datos que emula un sistema de una universidad o escuela
 
 ## Representación Grafica del modelo de datos
 
+[Visualización del modelo de datos](imgs/prismaliser.png)
+
 ## inicializar el modelo de datos para su uso
 
 Al descargar el proyecto, lo primero que debemos hacer es generar la base de datos:
