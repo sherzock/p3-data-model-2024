@@ -17,7 +17,7 @@ Se trata de un modelo de datos que emula un sistema de una universidad o escuela
 
 ## Representación Grafica del modelo de datos
 
-[Visualización del modelo de datos](imgs/prismaliser.png)
+![image](imgs/prismaliser.png)
 
 ## inicializar el modelo de datos para su uso
 
