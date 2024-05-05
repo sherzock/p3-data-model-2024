@@ -1,10 +1,5 @@
 import { CreateCourse } from "../../src/Courses";
 
-if (process.argv.length < 3) {
-  console.error(`Too many Arguments`);
-  process.exit(1);
-}
-
 const [_bun, _script, name, code, description, teacherid, classroomid] = process.argv;
 
 const newCourse = await CreateCourse(name, code, description, Number(teacherid), Number(classroomid));

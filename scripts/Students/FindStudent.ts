@@ -1,9 +1,4 @@
 import { FindStudent } from "../../src/Students";
-
-if (process.argv.length < 3) {
-    console.error(`Too many Arguments`);
-    process.exit(1);
-  }
   
   const [_bun, _script, studentid] = process.argv;
   
