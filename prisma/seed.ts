@@ -1,5 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-export const db = new PrismaClient();
+import { db } from "../src/db";
 
 async function main() {
   const student1 = await db.student.create({
