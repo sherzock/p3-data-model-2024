@@ -28,6 +28,6 @@ export const EnrrollStudent = async(studentid: number, courseid: number) => {
         });
     }
     catch(e){
-        return "Error: Unable to Enrroll the Student"
+        return "Error: Could not enrroll student";
     }
 };
