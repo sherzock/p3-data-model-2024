@@ -72,3 +72,25 @@ export const DeleteTeacher = async( teacherid: number) => {
     }
 
 };
+
+export const FindTeacher = async(teacherId: number) => {
+    try{
+        const teacher = await db.teacher.findFirst({
+            where:{ idPerson: teacherId},
+        });
+        return teacher;
+    }
+    catch(e){
+        return "Error: Could not find teacher";
+    }
+}
+
+export const ListTeachers = async() => {
+    try{
+        const teacher = await db.teacher.findMany();
+        return teacher;
+    }
+    catch(e){
+        return "Error: Could not find teachers";
+    }
+}
