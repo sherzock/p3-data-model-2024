@@ -49,3 +49,19 @@ export const UpdateStudentInfo = async(studentId: number, firstName: string, las
         return "Error: Could not update student info";
     }
 }
+
+export const DeleteStudent = async( studentid: number) => {
+
+    try{
+        const student = await db.student.delete({
+            where:{
+                idPerson: studentid
+            },
+        });
+        return student;
+    }
+    catch(e){
+        return "Error: Could not delete student";
+    }
+
+};

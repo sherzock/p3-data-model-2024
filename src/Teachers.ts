@@ -56,3 +56,19 @@ export const GradeStudentAssignment = async(studentid: number, courseid: number,
         return "Error: Could not Grade this assignment";
     }
 }
+
+export const DeleteTeacher = async( teacherid: number) => {
+
+    try{
+        const teacher = await db.teacher.delete({
+            where:{
+               idPerson: teacherid,
+            },
+        });
+        return teacher;
+    }
+    catch(e){
+        return "Error: Could not delete teacher";
+    }
+
+};
