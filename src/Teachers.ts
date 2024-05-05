@@ -34,3 +34,25 @@ export const UpdateTeacherInfo = async(teacherId: number, firstName: string, las
         return "Error: Could not Update teacher info";
     }
 }
+
+export const GradeStudentAssignment = async(studentid: number, courseid: number, gradenum: number, name: string) => {
+    try{
+        const enrrollment = await db.enrollment.findFirst({
+            where:{ 
+                studentId: studentid,
+                courseId: courseid,
+            },
+        });
+        const newgrade = await db.grade.create({
+            data:{
+                name: name,
+                grade: gradenum,
+                enrollmentId: enrrollment?.idEnrollment,
+            }
+        });
+        return newgrade;
+    }
+    catch(e){
+        return "Error: Could not Grade this assignment";
+    }
+}
