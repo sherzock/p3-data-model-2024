@@ -54,3 +54,25 @@ export const DeleteCourse = async( courseid: number) => {
     }
 
 };
+
+export const FindCourse = async(courseid: number) => {
+    try{
+        const course = await db.course.findFirst({
+            where:{ idCourse: courseid},
+        });
+        return course;
+    }
+    catch(e){
+        return "Error: Could not Find course";
+    }
+}
+
+export const ListCourses = async() => {
+    try{
+        const course = await db.course.findMany();
+        return course;
+    }
+    catch(e){
+        return "Error: Could not Find courses";
+    }
+}
