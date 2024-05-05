@@ -26,8 +26,26 @@ export const EnrrollStudent = async(studentid: number, courseid: number) => {
                studentId: studentid,
             },
         });
+        return enrrollment;
     }
     catch(e){
         return "Error: Could not enrroll student";
     }
 };
+
+export const UpdateStudentInfo = async(studentId: number, firstName: string, lastName: string, email: string) => {
+    try{
+        const student = await db.student.update({
+            where:{ idPerson: studentId},
+            data:{
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+            }
+        });
+        return student;
+    }
+    catch(e){
+        return "Error: Could not enrroll student";
+    }
+}
