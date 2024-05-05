@@ -52,3 +52,25 @@ export const DeleteClassroom = async( classroomId: number) => {
     }
 
 };
+
+export const FindClassroom = async(classroomId: number) => {
+    try{
+        const classroom = await db.classroom.findFirst({
+            where:{ idClassroom: classroomId},
+        });
+        return classroom;
+    }
+    catch(e){
+        return "Error: Could not find classroom";
+    }
+}
+
+export const ListClassrooms = async() => {
+    try{
+        const classroom = await db.classroom.findMany();
+        return classroom;
+    }
+    catch(e){
+        return "Error: Could not find classrooms";
+    }
+}
